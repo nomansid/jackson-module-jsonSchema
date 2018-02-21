@@ -186,7 +186,7 @@ public class TestGenerateJsonSchema
 
         JsonSchema prop5 = properties.get("property5");
         assertNotNull(prop5);
-        assertTrue(prop5.getRequired());
+        //assertTrue(prop5.getRequired());
         assertNull(prop5.getReadonly());
 
     }

@@ -1,5 +1,7 @@
 package com.fasterxml.jackson.module.jsonSchema;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
 import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
@@ -146,7 +148,7 @@ public abstract class JsonSchema
 	 * undefined. This is false by default, making the instance optional.
 	 */
 	@JsonProperty
-	private Boolean required = null;
+	private List<String> required;
 
     /**
      * This attribute indicates if the instance is not modifiable.
@@ -154,6 +156,7 @@ public abstract class JsonSchema
      */
     @JsonProperty
     private Boolean readonly = null;
+    
 
     /**
      * This attribute is a string that provides a full description of the of
@@ -299,7 +302,7 @@ public abstract class JsonSchema
 		return extendsextends;
 	}
 
-	public Boolean getRequired() {
+	public List<String> getRequired() {
 		return required;
 	}
 
@@ -455,8 +458,8 @@ public abstract class JsonSchema
 		this.id = id;
 	}
 
-	public void setRequired(Boolean required) {
-		this.required = required;
+	public void setRequired(String required) {
+		this.required.add(required);
 	}
 
     public void setReadonly(Boolean readonly){

@@ -72,7 +72,7 @@ public class ValidationSchemaFactoryWrapper extends SchemaFactoryWrapper {
         {
             Boolean required = constraintResolver.getRequired(prop);
             if (required != null) {
-                schema.setRequired(required);
+                schema.setRequired(prop.getName());
             }
         }
         if (schema.isArraySchema()) {
